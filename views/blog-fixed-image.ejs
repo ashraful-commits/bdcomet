@@ -1,0 +1,36 @@
+
+    <!-- End Navigation Bar-->
+    <section class="p-0">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-6 col-sm-4 img-side img-left">
+            <div class="img-holder blog-fixed-image">
+              <img src="/images/bg/18.jpg" alt="" class="bg-img">
+            </div>
+          </div>
+          <!-- end of side background image-->
+        </div>
+        <!-- end of row-->
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5 col-md-offset-7 col-sm-8 col-sm-offset-4">
+            <div class="articles-list">
+           <% post.forEach(element => { %>
+            <div class="post-listing"><span class="upper"><%= element.post_time %> <span class="dot"></span><a href="#" class="post-tag"><%= element.post_tag %> </a>
+            </span>
+            <h2 class="serif"><a href="#"><%= element.title %> </a></h2>
+            <p class="serif"><%= element.dis %> </p>
+            <p><a href="/blog-fixed-image/<%= element.id %> " class="upper small-link">Read me</a>
+            </p>
+          </div>
+           <% }) %>
+            </div>
+          </div>
+        </div>
+        <!-- end of row-->
+      </div>
+      <!-- end of container-->
+    </section>
+    <!-- Footer-->
+   
