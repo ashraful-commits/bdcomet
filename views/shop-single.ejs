@@ -8,26 +8,26 @@
               <div data-options="{&quot;animation&quot;: &quot;slide&quot;, &quot;controlNav&quot;: true}" class="flexslider nav-inside control-nav-dark">
                 <ul class="slides">
                   <li>
-                    <img src="<%= productF.img %>" alt="">
+                    <img src="/images/<%= productF.photo %>" alt="">
                   </li>
                   <li>
-                    <img src="<%= productF.img %>" alt="">
+                    <img src="/images/<%= productF.photo %>" alt="">
                   </li>
                   <li>
-                    <img src="<%= productF.img %>" alt="">
+                    <img src="/images/<%= productF.photo %>" alt="">
                   </li>
                 </ul>
               </div>
             </div>
             <div class="col-md-5 col-md-offset-1">
               <div class="title mt-0">
-                <h2><%= productF.dis %> <span class="red-dot"></span></h2>
+                <h2><%= productF.title %> <span class="red-dot"></span></h2>
                 <p class="m-0">Free Shipping Worldwide</p>
               </div>
               <div class="single-product-price">
                 <div class="row">
                   <div class="col-xs-6">
-                    <h3><del>$29.99</del><span>$24.99</span></h3>
+                    <h3><del>$<%= productF.oldprice %> </del><span>$<%= productF.newprice %> </span></h3>
                   </div>
                   <div class="col-xs-6 text-right"><span class="rating-stars">              <i class="ti-star full"></i><i class="ti-star full"></i><i class="ti-star full"></i><i class="ti-star full"></i><i class="ti-star"></i><span class="hidden-xs">(3 Reviews)</span></span>
                   </div>
