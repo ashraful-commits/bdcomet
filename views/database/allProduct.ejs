@@ -1,0 +1,50 @@
+<div class="container product-table">
+    <div class="row my-5 justify-content-center">
+        <div class="col-md-10">
+            <div class="card">
+                <div class="card-header">
+                   <a href="/createproduct" class="w-100 btn btn-sm btn-primary h3">Add new Product</a>
+                </div>
+                <div class="card-body">
+                    <h1 class="text-center">All Product</h1>
+                    <table class="table table-striped poduct-table-data">
+                        <thead>
+                            <tr>
+                                <th class="text-center">#</th>
+                                <th class="text-center">Title</th>
+                                <th class="text-center">Photo</th>
+                                <th class="text-center">Discription</th>
+                                <th class="text-center">Old Price</th>
+                                <th class="text-center">New Price</th>
+                                <th class="w-25 text-center">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                           <% product.forEach(element => { %>
+                            <tr>
+                                <td class="text-center"><%= element.id %> </td>
+                                <td class="text-center"><%= element.title %>  </td>
+                                <td class="text-center">
+                                    <% if (element.photo == '1.jpg') { %>
+                                        <img class="w-25" src="/images/shop/<%= element.photo %> " alt="">
+                                    <% } else { %>
+                                        <img class="w-25" src="/images/<%= element.photo %> " alt="">
+                                    <% } %>
+                                </td>
+                                <td class="text-center "><%= element.dis %> </td>
+                                <td class="text-center">$<%= element.oldprice %> </td>
+                                <td class="text-center">$ <%= element.newprice %> </td>
+                                <td class="text-center">
+                                    <a href="" class="btn btn-sm btn-primary"><i class="fas fa-eye"></i></a>
+                                    <a href="" class="btn btn-sm btn-warning"><i class="fas fa-edit"></i></a>
+                                    <a href="" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></a>
+                                </td>
+                            </tr>
+                           <% }) %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

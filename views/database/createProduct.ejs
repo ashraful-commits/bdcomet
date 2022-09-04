@@ -1,0 +1,44 @@
+<div class="container product-create">
+    <div class="row my-5 justify-content-center">
+        <div class="col-md-10">
+            <div class="card">
+                <div class="card-header">
+                   <a href="/allproduct" class="w-100 btn btn-sm btn-primary h3">Back</a>
+                </div>
+                <div class="card-body">
+                    <h1 class="text-center">Create New Product</h1>
+                    <form action="/createproduct" method="post" enctype="multipart/form-data">
+                        <div class="my-1">
+                            <label for="">Title</label>
+                            <input type="text" name="title" class="form-control" id="">
+                        </div>
+                        <div class="my-1">
+                            <label for="">Photo</label>
+                            <br>
+                            <img src="" id="preview" alt="">
+                            <br>
+                            <label for="main-photo-view">
+                                <img class="w-25 product-camara" src="https://cdn-icons-png.flaticon.com/512/83/83574.png" alt="">
+                            </label>
+                            <input type="file" name="photo-product" class="form-control d-none" id="main-photo-view" multiple>
+                        </div>
+                        <div class="my-1">
+                            <label for="">Discription</label>
+                            <input type="text" name="dis" class="form-control" id="">
+                        </div>
+                        <div class="my-1">
+                            <label for="">Old price</label>
+                            <input type="text" name="oldprice" class="form-control" id="">
+                        </div>
+                        <div class="my-1">
+                            <label for="">New price</label>
+                            <input type="text" name="newprice" class="form-control" id="">
+                        </div>
+                        <button class="w-100 btn btn-sm btn-primary" type="submit">Post</button>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

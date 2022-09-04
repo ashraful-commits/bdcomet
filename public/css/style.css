@@ -4885,3 +4885,13 @@ footer.dark p {
     transform: scale(1);
   }
 }
+
+
+.product-table table th,td  img{
+  width: 50px;
+  height: 100%;
+}
+.product-create  .product-camara{
+  width: 50px !important;
+  height: 50px !important;
+}

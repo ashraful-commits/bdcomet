@@ -1,5 +1,7 @@
 import express from 'express';
 import {
+  addProduct,
+  allProduct,
   blogFixedImage,
   blogMasonry,
   blogMasonrySidebar,
@@ -10,6 +12,8 @@ import {
   blogSingle,
   blogSingleSidebar,
   blogSingleSidebarLeft,
+  createProduct,
+  editProduct,
   elementsAccordions,
   elementsAlerts,
   elementsBars,
@@ -66,7 +70,9 @@ import {
   shopSingleviw,
   shopThreeCol,
   shopTwoCol,
+  viewProduct,
 } from '../controllers/pageController.js';
+import { productMulter } from '../middlerwares/pageMiddlerwares.js';
 
 // init router
 export const router = express.Router();
@@ -140,3 +146,10 @@ router.get('/shop-single', shopSingle);
 router.get('/shop-2col/:id', shopSingleviw);
 router.get('/shop-3col/:id', shopSingleviw);
 router.get('/shop-4col/:id', shopSingleviw);
+
+// database product
+router.get('/allproduct', allProduct);
+router.get('/createproduct', createProduct);
+router.post('/createproduct', productMulter, addProduct);
+router.get('/editproduct', editProduct);
+router.get('/viewproduct', viewProduct);

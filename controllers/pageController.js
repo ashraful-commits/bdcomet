@@ -1,6 +1,6 @@
 import { fileURLToPath } from 'url';
 import path, { dirname } from 'path';
-import { readFileSync } from 'fs';
+import { readFileSync, writeFileSync } from 'fs';
 
 // init dirname
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -239,10 +239,31 @@ export const shopTwoCol = (req, res) => {
   const product = readFileSync(
     path.join(__dirname, '../db/product.json')
   );
+  const bags = readFileSync(path.join(__dirname, '../db/bags.json'));
+  const beauty = readFileSync(
+    path.join(__dirname, '../db/beauty.json')
+  );
+  const blazers = readFileSync(
+    path.join(__dirname, '../db/blazers.json')
+  );
+  const dresses = readFileSync(
+    path.join(__dirname, '../db/dresses.json')
+  );
+  const jeans = readFileSync(
+    path.join(__dirname, '../db/jeans.json')
+  );
   res.render('shop-2col', {
     product: JSON.parse(product.toString()),
+    bags: JSON.parse(bags.toString()),
+    beauty: JSON.parse(beauty.toString()),
+    blazers: JSON.parse(blazers.toString()),
+    dresses: JSON.parse(dresses.toString()),
+    jeans: JSON.parse(jeans.toString()),
+    parid: req.params.id,
   });
 };
+
+// shop three
 export const shopThreeCol = (req, res) => {
   const product = readFileSync(
     path.join(__dirname, '../db/product.json')
@@ -276,4 +297,46 @@ export const shopSingleviw = (req, res) => {
   res.render('shop-single', {
     productF: vProduct,
   });
+};
+
+// database
+
+export const allProduct = (req, res) => {
+  const product = readFileSync(
+    path.join(__dirname, '../db/product.json')
+  );
+  res.render('database/allProduct', {
+    product: JSON.parse(product.toString()),
+  });
+};
+export const addProduct = (req, res) => {
+  const product = JSON.parse(
+    readFileSync(path.join(__dirname, '../db/product.json'))
+  );
+  const { title, photo, dis, oldprice, newprice } = req.body;
+  product.push({
+    id: product.length - 1 + 2,
+    title: title,
+    photo: req.file.filename,
+    dis: dis,
+    oldprice: oldprice,
+    newprice: newprice,
+  });
+  console.log(product);
+  // whit file
+  writeFileSync(
+    path.join(__dirname, '../db/product.json'),
+    JSON.stringify(product)
+  );
+  // redirect
+  res.redirect('/allproduct');
+};
+export const createProduct = (req, res) => {
+  res.render('database/createProduct');
+};
+export const editProduct = (req, res) => {
+  res.render('database/editProduct');
+};
+export const viewProduct = (req, res) => {
+  res.render('database/viewProduct');
 };

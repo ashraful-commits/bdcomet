@@ -109,13 +109,13 @@
                   <div class="shop-product">
                     <div class="product-thumb">
                       <a href="/shop-3col/<%= element.id %> ">
-                        <img src="<%= element.img %> " alt="">
+                        <img src="/images/<%= element.photo %> " alt="">
                       </a>
                       <div class="product-overlay"><a href="/shop-3col/<%= element.id %> " class="btn btn-color-out btn-sm">Add To Cart<i class="ti-bag"></i></a>
                       </div>
                     </div>
                     <div class="product-info">
-                      <h4 class="upper"><a href="/shop-3col/<%= element.id %> "><%= element.dis %> </a></h4><span>$79.99</span>
+                      <h4 class="upper"><a href="/shop-3col/<%= element.id %> "><%= element.dis %> </a></h4><span>$<%= element.newprice %> </span>
                       <div class="save-product"><a href="#"><i class="icon-heart"></i></a>
                       </div>
                     </div>
