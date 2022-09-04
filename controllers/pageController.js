@@ -322,7 +322,6 @@ export const addProduct = (req, res) => {
     oldprice: oldprice,
     newprice: newprice,
   });
-  console.log(product);
   // whit file
   writeFileSync(
     path.join(__dirname, '../db/product.json'),
