@@ -68,6 +68,7 @@ import {
   shopFourCol,
   shopSingle,
   shopSingleviw,
+  shopSingleviwsingle,
   shopThreeCol,
   shopTwoCol,
   viewProduct,
@@ -144,6 +145,7 @@ router.get('/shop-cart', shopCart);
 router.get('/shop-checkout', shopCheckout);
 router.get('/shop-single', shopSingle);
 router.get('/shop-2col/:id', shopSingleviw);
+router.get('/shop-2col/:id/:id', shopSingleviwsingle);
 router.get('/shop-3col/:id', shopSingleviw);
 router.get('/shop-4col/:id', shopSingleviw);
 

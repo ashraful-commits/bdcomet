@@ -160,62 +160,23 @@
         <div class="related-products">
           <h5 class="upper">Related Products</h5>
           <div class="row">
-            <div class="col-md-3 col-sm-6">
-              <div class="shop-product">
-                <div class="product-thumb">
-                  <a href="#">
-                    <img src="/images/shop/1.jpg" alt="">
-                  </a>
-                </div>
-                <div class="product-info">
-                  <h4 class="upper"><a href="#">Premium Notch Blazer</a></h4><span>$79.99</span>
-                  <div class="save-product"><a href="#"><i class="icon-heart"></i></a>
+            <% product.forEach(element => { %>
+              <div class="col-md-3 col-sm-6">
+                <div class="shop-product">
+                  <div class="product-thumb">
+                    <a href="<%= element.id %> ">
+                      <img src="/images/<%= element.photo %> " alt="">
+                    </a>
+                  </div>
+                  <div class="product-info">
+                    <h4 class="upper"><a href="#"><%= element.title %> </a></h4><span>$<%= element.newprice %> </span>
+                    <div class="save-product"><a href="#"><i class="icon-heart"></i></a>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-              <div class="shop-product">
-                <div class="product-thumb">
-                  <a href="#">
-                    <img src="/images/shop/2.jpg" alt="">
-                  </a>
-                </div>
-                <div class="product-info">
-                  <h4 class="upper"><a href="#">Premium Suit Blazer</a></h4><span>$199.99</span>
-                  <div class="save-product"><a href="#"><i class="icon-heart"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-              <div class="shop-product">
-                <div class="product-thumb">
-                  <a href="#">
-                    <img src="/images/shop/3.jpg" alt="">
-                  </a>
-                </div>
-                <div class="product-info">
-                  <h4 class="upper"><a href="#">Vintage Sweatshirt</a></h4><span>$99.99</span>
-                  <div class="save-product"><a href="#"><i class="icon-heart"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-              <div class="shop-product">
-                <div class="product-thumb">
-                  <a href="#">
-                    <img src="/images/shop/4.jpg" alt="">
-                  </a>
-                </div>
-                <div class="product-info">
-                  <h4 class="upper"><a href="#">Longline Jersey Jacket</a></h4><span>$19.99</span>
-                  <div class="save-product"><a href="#"><i class="icon-heart"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
+             
+            <% }) %>
           </div>
         </div>
       </div>

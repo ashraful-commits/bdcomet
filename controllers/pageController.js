@@ -296,6 +296,16 @@ export const shopSingleviw = (req, res) => {
   const vProduct = product.find((data) => data.id == req.params.id);
   res.render('shop-single', {
     productF: vProduct,
+    product: product,
+  });
+};
+export const shopSingleviwsingle = (req, res) => {
+  const product = JSON.parse(
+    readFileSync(path.join(__dirname, '../db/product.json'))
+  );
+  const vProduct = product.find((data) => data.id == req.params.id);
+  res.render('shop-single', {
+    productF: vProduct,
   });
 };
 
