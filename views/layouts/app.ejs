@@ -614,11 +614,25 @@
       $('.poduct-table-data').DataTable();
       const fileTag = document.querySelector('#main-photo-view');
       const viewTag = document.querySelector('#preview');
+if(fileTag){
 
-      fileTag.onchange = (e) => {
+  fileTag.onchange = (e) => {
         const imgTag = URL.createObjectURL(e.target.files[0]);
         viewTag.setAttribute('src', imgTag)
       }
+}
+const delete_btn = document.querySelectorAll('.delete-btn');
+
+delete_btn.forEach((items)=>{
+   items.onclick = ()=>{
+    const conf = confirm('are you sure ?')
+    if(conf== true){
+      return true
+    }else{
+      return false
+    }
+   }
+})
     </script>
 </body>
 

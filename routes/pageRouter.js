@@ -13,6 +13,7 @@ import {
   blogSingleSidebar,
   blogSingleSidebarLeft,
   createProduct,
+  deleteProduct,
   editProduct,
   elementsAccordions,
   elementsAlerts,
@@ -71,6 +72,7 @@ import {
   shopSingleviwsingle,
   shopThreeCol,
   shopTwoCol,
+  updateProduct,
   viewProduct,
 } from '../controllers/pageController.js';
 import { productMulter } from '../middlerwares/pageMiddlerwares.js';
@@ -153,5 +155,7 @@ router.get('/shop-4col/:id', shopSingleviw);
 router.get('/allproduct', allProduct);
 router.get('/createproduct', createProduct);
 router.post('/createproduct', productMulter, addProduct);
-router.get('/editproduct', editProduct);
-router.get('/viewproduct', viewProduct);
+router.get('/editproduct/:id', editProduct);
+router.post('/editproduct/:id', productMulter, updateProduct);
+router.get('/viewproduct/:id', viewProduct);
+router.get('/delete/:id', deleteProduct);

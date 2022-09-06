@@ -344,8 +344,61 @@ export const createProduct = (req, res) => {
   res.render('database/createProduct');
 };
 export const editProduct = (req, res) => {
-  res.render('database/editProduct');
+  const product = JSON.parse(
+    readFileSync(path.join(__dirname, '../db/product.json'))
+  );
+  const editProduct = product.find(
+    (data) => (data.id = req.params.id)
+  );
+  console.log(editProduct);
+  res.render('database/editProduct', {
+    product: editProduct,
+  });
+};
+export const updateProduct = (req, res) => {
+  const product = JSON.parse(
+    readFileSync(path.join(__dirname, '../db/product.json'))
+  );
+  const index = product.findIndex(
+    (data) => (data.id = req.params.id)
+  );
+  console.log(index);
+  product[index] = {
+    ...product[index],
+    title: req.body.title,
+    dis: req.body.dis,
+    oldprice: req.body.oldprice,
+    newprice: req.body.newprice,
+  };
+  writeFileSync(
+    path.join(__dirname, '../db/product.json'),
+    JSON.stringify(product)
+  );
+  res.redirect('/allproduct');
 };
 export const viewProduct = (req, res) => {
-  res.render('database/viewProduct');
+  const product = JSON.parse(
+    readFileSync(path.join(__dirname, '../db/product.json'))
+  );
+  const viewProduct = product.find(
+    (data) => data.id == req.params.id
+  );
+  console.log(viewProduct);
+  res.render('database/viewProduct', {
+    productV: viewProduct,
+  });
+};
+
+export const deleteProduct = (req, res) => {
+  const product = JSON.parse(
+    readFileSync(path.join(__dirname, '../db/product.json'))
+  );
+  const DeleteData = product.filter(
+    (data) => data.id != req.params.id
+  );
+  writeFileSync(
+    path.join(__dirname, '../db/product.json'),
+    JSON.stringify(DeleteData)
+  );
+  res.redirect('/allProduct');
 };
