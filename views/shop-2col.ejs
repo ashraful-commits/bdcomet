@@ -24,17 +24,19 @@
             <div class="sidebar">
               <div class="widget">
                 <h6 class="upper">Categories</h6>
-                <ul class="nav">
-                  <li><a href="/beauty">Beauty</a>
+                <ul class="nav"> 
+                  <li><a href="#all">All product</a>
                   </li>
-                  <li><a href="/blazers">Blazers</a>
+                  <li><a href="#beauty">Beauty</a>
                   </li>
-                  <li><a href="/bags">Bags</a>
+                  <li><a href="#blazers">Blazers</a>
                   </li>
-                  <li><a href="/jeans">Jeans</a>
+                  <li><a href="#bags">Bags</a>
+                  </li>
+                  <li><a href="#jeans">Jeans</a>
                   </li>
         
-                  <li><a href="/dresses">Dresses</a>
+                  <li><a href="#dresses">Dresses</a>
                   </li>
                 </ul>
               </div>
@@ -102,9 +104,114 @@
               <!-- end of row-->
             </div>
             <div class="container-fluid">
-              <div class="row">
+              <div class="row" id="all">
                             
               <% product.forEach(element => { %>
+                <div class="col-sm-6">
+                  <div class="shop-product">
+                    <div class="product-thumb">
+                      <a href="/shop-2col/<%= element.id %> ">
+                        <img src="/images/<%= element.photo %> " alt="">
+                      </a>
+                      <div class="product-overlay"><a href="/shop-2col/<%= element.id %> " class="btn btn-color-out btn-sm">Add To Cart<i class="ti-bag"></i></a>
+                      </div>
+                    </div>
+                    <div class="product-info">
+                      <h4 class="upper"><a href="/shop-2col/<%= element.id %>"><%= element.dis %> </a></h4><span>$<%= element.newprice %></span>
+                      <div class="save-product"><a href="#"><i class="icon-heart"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <% }) %>
+              </div>
+              <div class="row" id="bags">
+                            
+              <% bags.forEach(element => { %>
+                <div class="col-sm-6">
+                  <div class="shop-product">
+                    <div class="product-thumb">
+                      <a href="/shop-2col/<%= element.id %> ">
+                        <img src="/images/<%= element.photo %> " alt="">
+                      </a>
+                      <div class="product-overlay"><a href="/shop-2col/<%= element.id %> " class="btn btn-color-out btn-sm">Add To Cart<i class="ti-bag"></i></a>
+                      </div>
+                    </div>
+                    <div class="product-info">
+                      <h4 class="upper"><a href="/shop-2col/<%= element.id %>"><%= element.dis %> </a></h4><span>$<%= element.newprice %></span>
+                      <div class="save-product"><a href="#"><i class="icon-heart"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <% }) %>
+              </div>
+              <div class="row" id="beauty">
+                            
+              <% beauty.forEach(element => { %>
+                <div class="col-sm-6">
+                  <div class="shop-product">
+                    <div class="product-thumb">
+                      <a href="/shop-2col/<%= element.id %> ">
+                        <img src="/images/<%= element.photo %> " alt="">
+                      </a>
+                      <div class="product-overlay"><a href="/shop-2col/<%= element.id %> " class="btn btn-color-out btn-sm">Add To Cart<i class="ti-bag"></i></a>
+                      </div>
+                    </div>
+                    <div class="product-info">
+                      <h4 class="upper"><a href="/shop-2col/<%= element.id %>"><%= element.dis %> </a></h4><span>$<%= element.newprice %></span>
+                      <div class="save-product"><a href="#"><i class="icon-heart"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <% }) %>
+              </div>
+              <div class="row" id="blazers">
+                            
+              <% blazers.forEach(element => { %>
+                <div class="col-sm-6">
+                  <div class="shop-product">
+                    <div class="product-thumb">
+                      <a href="/shop-2col/<%= element.id %> ">
+                        <img src="/images/<%= element.photo %> " alt="">
+                      </a>
+                      <div class="product-overlay"><a href="/shop-2col/<%= element.id %> " class="btn btn-color-out btn-sm">Add To Cart<i class="ti-bag"></i></a>
+                      </div>
+                    </div>
+                    <div class="product-info">
+                      <h4 class="upper"><a href="/shop-2col/<%= element.id %>"><%= element.dis %> </a></h4><span>$<%= element.newprice %></span>
+                      <div class="save-product"><a href="#"><i class="icon-heart"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <% }) %>
+              </div>
+              <div class="row" id="dresses">
+                            
+              <% dresses.forEach(element => { %>
+                <div class="col-sm-6">
+                  <div class="shop-product">
+                    <div class="product-thumb">
+                      <a href="/shop-2col/<%= element.id %> ">
+                        <img src="/images/<%= element.photo %> " alt="">
+                      </a>
+                      <div class="product-overlay"><a href="/shop-2col/<%= element.id %> " class="btn btn-color-out btn-sm">Add To Cart<i class="ti-bag"></i></a>
+                      </div>
+                    </div>
+                    <div class="product-info">
+                      <h4 class="upper"><a href="/shop-2col/<%= element.id %>"><%= element.dis %> </a></h4><span>$<%= element.newprice %></span>
+                      <div class="save-product"><a href="#"><i class="icon-heart"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <% }) %>
+              </div>
+              <div class="row" id="jeans">
+                            
+              <% jeans.forEach(element => { %>
                 <div class="col-sm-6">
                   <div class="shop-product">
                     <div class="product-thumb">

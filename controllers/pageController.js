@@ -7,7 +7,12 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 // export file
 export const homePageShow = (req, res) => {
-  res.render('index');
+  const slider = JSON.parse(
+    readFileSync(path.join(__dirname, '../db/slider.json'))
+  );
+  res.render('index', {
+    slider: slider,
+  });
 };
 export const homePageShowTwo = (req, res) => {
   res.render('index-2');

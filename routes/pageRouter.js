@@ -153,9 +153,13 @@ router.get('/shop-4col/:id', shopSingleviw);
 
 // database product
 router.get('/allproduct', allProduct);
+// create data
 router.get('/createproduct', createProduct);
 router.post('/createproduct', productMulter, addProduct);
+// edit data
 router.get('/editproduct/:id', editProduct);
 router.post('/editproduct/:id', productMulter, updateProduct);
+// view product
 router.get('/viewproduct/:id', viewProduct);
+// delete product
 router.get('/delete/:id', deleteProduct);

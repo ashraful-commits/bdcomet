@@ -7,7 +7,7 @@
                 </div>
                 <div class="card-body">
                     <h1 class="text-center">All Product</h1>
-                    <table class="table table-striped poduct-table-data">
+                    <table style="white-space:nowrap; table-layout:fixed" class="table table-striped poduct-table-data">
                         <thead>
                             <tr>
                                 <th class="text-center">#</th>
@@ -31,7 +31,7 @@
                                         <img class="w-25" src="/images/<%= element.photo %> " alt="">
                                     <% } %>
                                 </td>
-                                <td class="text-center "><%= element.dis %> </td>
+                                <td style="overflow: hidden; text-overflow:ellipsis" class="text-center "><%= element.dis %> </td>
                                 <td class="text-center">$<%= element.oldprice %> </td>
                                 <td class="text-center">$ <%= element.newprice %> </td>
                                 <td class="text-center">
