@@ -152,7 +152,7 @@ router.get('/shop-3col/:id', shopSingleviw);
 router.get('/shop-4col/:id', shopSingleviw);
 
 // database product
-router.get('/allproduct', allProduct);
+router.get('/admin', allProduct);
 // create data
 router.get('/createproduct', createProduct);
 router.post('/createproduct', productMulter, addProduct);

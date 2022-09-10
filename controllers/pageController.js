@@ -354,7 +354,7 @@ export const addProduct = (req, res) => {
     JSON.stringify(product)
   );
   // redirect
-  res.redirect('/allproduct');
+  res.redirect('/admin');
 };
 export const createProduct = (req, res) => {
   res.render('database/createProduct');
@@ -390,7 +390,7 @@ export const updateProduct = (req, res) => {
     path.join(__dirname, '../db/product.json'),
     JSON.stringify(product)
   );
-  res.redirect('/allproduct');
+  res.redirect('/admin');
 };
 export const viewProduct = (req, res) => {
   const product = JSON.parse(
@@ -416,5 +416,5 @@ export const deleteProduct = (req, res) => {
     path.join(__dirname, '../db/product.json'),
     JSON.stringify(DeleteData)
   );
-  res.redirect('/allProduct');
+  res.redirect('/admin');
 };
