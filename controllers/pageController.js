@@ -190,7 +190,18 @@ export const pageAboutTwo = (req, res) => {
   res.render('page-about-2');
 };
 export const pageAbout = (req, res) => {
-  res.render('page-about');
+  const team = JSON.parse(
+    readFileSync(path.join(__dirname, '../db/team.json'))
+  );
+  const team_slider = JSON.parse(
+    readFileSync(path.join(__dirname, '../db/team-slider.json'))
+  );
+  const customer = JSON.parse(
+    readFileSync(path.join(__dirname, '../db/customer.json'))
+  );
+  res.render('page-about', {
+    customer: customer,
+  });
 };
 export const pageCareers = (req, res) => {
   res.render('page-careers');

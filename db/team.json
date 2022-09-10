@@ -1,0 +1,32 @@
+[
+    {
+        "id":1,
+        "name":"Arya Stark",
+        "pro":"Founder and CEO",
+        "img":"4.jpg"
+    },
+    {
+        "id":2,
+        "name":"Jesse Pinkman",
+        "pro":"Architect",
+        "img":"5.jpg"
+    },
+    {
+        "id":3,
+        "name":"Elliot Anderson",
+        "pro":"Engineer",
+        "img":"6.jpg"
+    },
+    {
+        "id":4,
+        "name":"Jesse Pinkman",
+        "pro":"Interior Designer",
+        "img":"7.jpg"
+    },
+    {
+        "id":4,
+        "name":"Robin Scherbatsky",
+        "pro":"Sales Manager",
+        "img":"8.jpg"
+    }
+]
